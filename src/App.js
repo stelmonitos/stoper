@@ -1,6 +1,6 @@
-import FormattedTime from './components/FormattedTime';
+import FormattedTime from './components/FormattedTime/FormattedTime';
 import { useState, useEffect } from 'react';
-
+import styles from './components/Button/Button.module.scss'
 function App() {
     const [time, setTime] = useState(0);
     const [intervalId, setIntervalId] = useState(null);
@@ -31,12 +31,12 @@ function App() {
     }
 
   return(
-      <div>
-      <FormattedTime time={time} />
-      <button onClick={startTimer}>Start</button>
-      <button onClick={stopTimer}>Stop</button>
-      <button onClick={resetTimer}>Reset</button>
-      </div>
+      <span>
+      <FormattedTime time={time}/>
+      <button className={styles.button} onClick={startTimer}>Start</button>
+      <button className={styles.button} onClick={stopTimer}>Stop</button>
+      <button className={styles.button} onClick={resetTimer}>Reset</button>
+      </span>
   );
 
 }

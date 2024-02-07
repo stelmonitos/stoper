@@ -1,6 +1,7 @@
+import styles from './FormattedTime.module.scss';
+import Button from '../Button/Button';
 
-
-const FormattedTime = ({ time }) => {
+const FormattedTime = ({ time, startTimer }) => {
     const formatTime = millseconds => {
         let hours = Math.floor(millseconds / 3600000);
         let minutes = Math.floor((millseconds - hours * 3600000) / 60000);
@@ -14,7 +15,7 @@ const FormattedTime = ({ time }) => {
     };
 
     return (
-        <div>
+        <div className={styles.formatTime}>
             {formatTime(time)}
         </div>
     )
